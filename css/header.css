@@ -33,71 +33,87 @@
 }
 
 .nav-list,
-.contacts-list {
+.contacts {
   display: none;
 }
 
+.mobile-menu-open-btn {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  line-height: 0;
+  cursor: pointer;
+  stroke: #2e2f42;
+}
+
 @media screen and (min-max: 768px) {
-  logo {
+  .mobile-menu-open-btn {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .contacts {
+    display: block;
+    font-style: normal;
+  }
+
+  .logo {
     padding: 24px 0;
     margin-right: 120px;
   }
-}
 
-.nav-link {
-  display: flex;
-  gap: 40px;
-}
+  .nav-link {
+    position: relative;
+    display: block;
+    padding: 24px 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
-.nav-link {
-  position: relative;
-  display: block;
-  padding: 24px 0;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #2e2f42;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+  .nav-link:hover,
+  .nav-link:focus,
+  .nav-link.current {
+    color: #404bbf;
+  }
 
-.nav-link:hover,
-.nav-link:focus {
-  color: #404bbf;
-}
+  .nav-link.current::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #404bbf;
+    border-radius: 2px;
+  }
 
-.nav-link.current {
-  color: #404bbf;
-}
+  .contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
 
-.nav-link.current::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 4px;
-  background-color: #404bbf;
-  border-radius: 2px;
-}
+  .contacts-link {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #434455;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
-.contacts-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.contacts-link {
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: #434455;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.contacts-link:hover,
-.contacts-link:focus {
-  color: #404bbf;
+  .contacts-link:hover,
+  .contacts-link:focus {
+    color: #404bbf;
+  }
 }
 
 @media screen and (min-max: 1158px) {
@@ -107,10 +123,12 @@
 
   .contacts-list {
     flex-direction: row;
+    align-items: center;
     gap: 40px;
   }
 
   .contacts-link {
+    padding: 24px 0;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;

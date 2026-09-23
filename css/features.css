@@ -1,4 +1,26 @@
-.section {
+.container {
+  max-width: 320px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.features {
   padding-top: 96px;
   padding-bottom: 96px;
 }
@@ -50,7 +72,7 @@
 }
 
 @media screen and (min-width: 1158px) {
-  .section {
+  .features {
     padding-top: 120px;
     padding-bottom: 120px;
   }
@@ -63,7 +85,7 @@
     width: calc((100% - 3 * 24px) / 4);
   }
 
-  .features-icon-wrapper {
+  .features-icon-container {
     display: flex;
     align-items: center;
     justify-content: center;

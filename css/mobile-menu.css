@@ -10,8 +10,8 @@
   visibility: hidden;
   pointer-events: none;
   transition:
-    opasity 250em cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250em cubic-bezier(0.4, 0, 0.2, 1);
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu.is-open {
@@ -43,7 +43,7 @@
   align-items: center;
   justify-content: center;
   background-color: #e7e9fc;
-  border: 1px solid rgbs(46, 47, 66, 0.1);
+  border: 1px solid rgba(46, 47, 66, 0.1);
   padding: 0;
   cursor: pointer;
   transition:
@@ -55,6 +55,57 @@
 .mobile-menu-close-btn:focus {
   background-color: #404bbf;
   fill: #ffffff;
+}
+
+.mobile-menu-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.mobile-menu-nav-link {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu-nav-link:hover,
+.mobile-menu-nav-link:focus,
+.mobile-menu-nav-link.current {
+  color: #404bbf;
+}
+
+.mobile-menu-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.mobile-menu-tel-link {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  color: #4d5ae5;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu-email-link {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu-email-link:hover,
+.mobile-menu-email-link:focus {
+  color: #4d5ae5;
 }
 
 @media screen and (min-width: 768px) {
