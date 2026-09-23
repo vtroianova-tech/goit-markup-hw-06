@@ -37,6 +37,7 @@
   display: none;
 }
 
+.menu-open-btn,
 .mobile-open-btn,
 .mobile-menu-open-btn {
   padding: 0;
@@ -47,8 +48,9 @@
   stroke: #2e2f42;
 }
 
-@media screen and (min-max: 768px) {
+@media screen and (min-width: 768px) {
   .menu-open-btn,
+  .mobile-open-btn,
   .mobile-menu-open-btn {
     display: none;
   }
@@ -62,6 +64,7 @@
   .contacts {
     display: block;
     font-style: normal;
+    margin-left: auto;
   }
 
   .logo {
@@ -98,13 +101,16 @@
     border-radius: 2px;
   }
 
-  .contacts-list {
+  .contacts-list,
+  .mobile-menu-contacts-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
 
-  .contacts-link {
+  .contacts-link,
+  .mobile-menu-email-link,
+  .mobile-menu-tel-link {
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
@@ -113,23 +119,30 @@
   }
 
   .contacts-link:hover,
-  .contacts-link:focus {
+  .contacts-link:focus,
+  .mobile-menu-email-link:hover,
+  .mobile-menu-email-link:focus,
+  .mobile-menu-tel-list:hover,
+  .mobile-menu-tel-link:focus {
     color: #404bbf;
   }
 }
 
-@media screen and (min-max: 1158px) {
+@media screen and (min-width: 1158px) {
   .logo {
     margin-right: 76px;
   }
 
-  .contacts-list {
+  .contacts-list,
+  .mobile-menu-contacts-list {
     flex-direction: row;
     align-items: center;
     gap: 40px;
   }
 
-  .contacts-link {
+  .contacts-link,
+  .mobile-menu-contacts-link,
+  .mobile-menu-tel-link {
     padding: 24px 0;
     font-size: 16px;
     line-height: 1.5;
